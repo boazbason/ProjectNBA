@@ -13,7 +13,7 @@ form.addEventListener('submit', async (e) => {
     const twoPercent = Number((document.getElementById('FG-input') as HTMLInputElement).value);
     const threePercent = Number((document.getElementById('3P-input') as HTMLInputElement).value);
 
-    let myPlay: Player = new Player(position, points, twoPercent, threePercent);
+    let myPlay: Player = new Player(position, twoPercent, threePercent, points);
     let playrss: Player[] = await ApiGetPlayers(myPlay);
     console.log(playrss);
 

@@ -20,7 +20,7 @@ form.addEventListener('submit', (e) => __awaiter(void 0, void 0, void 0, functio
     const points = Number(document.getElementById('Points-input').value);
     const twoPercent = Number(document.getElementById('FG-input').value);
     const threePercent = Number(document.getElementById('3P-input').value);
-    let myPlay = new Player(position, points, twoPercent, threePercent);
+    let myPlay = new Player(position, twoPercent, threePercent, points);
     let playrss = yield ApiGetPlayers(myPlay);
     console.log(playrss);
     AddToTable(playrss);

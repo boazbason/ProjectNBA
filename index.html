@@ -32,13 +32,16 @@
             </select>
 
             <label for="Points" class="input-search">Points</label>
-            <input type="range" id="Points-input" class="input-search" name="volume" min="0" max="20000" value="0" />
-            
+            <input type="range" id="Points-input" class="input-search" name="volume" min="0" max="20000" value="0" oninput="this.nextElementSibling.value = this.value;"/>
+            <output name="result" class="label" for="points-input" >1</output>
+
             <label for="FG" class="input-search">FG%</label>
-            <input type="range" id="FG-input" class="input-search" name="FG" min="0" max="100" value="0"/>
+            <input type="range" id="FG-input" class="input-search" name="FG" min="0" max="100" value="0" oninput="this.nextElementSibling.value = this.value;"/>
+            <output name="result" class="label" for="FG-input" >1</output>
 
             <label for="3P" class="input-search">3P%</label>
-            <input type="range" id="3P-input" class="input-search" name="3P" min="0" max="100" value="0"/>
+            <input type="range" id="3P-input" class="input-search" name="3P" min="0" max="100" value="0" oninput="this.nextElementSibling.value = this.value;"/>
+            <output name="result" class="label" for="3P-input" >1</output>
 
             <button id="submit-button" class="input-search" type="submit" >Search Player</button>
 
