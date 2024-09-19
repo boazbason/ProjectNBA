@@ -1,4 +1,4 @@
-
+let table = document.getElementById("table-of-players") as HTMLTableElement;
 
 const ListOfPlayers: Player[] = [];
 const form = document.getElementById("form")!;
@@ -17,7 +17,7 @@ form.addEventListener('submit', async (e) => {
     let playrss: Player[] = await ApiGetPlayers(myPlay);
     console.log(playrss);
 
-    // AddToTable(playrss);
+    AddToTable(playrss);
     
    
 });
@@ -27,12 +27,6 @@ form.addEventListener('submit', async (e) => {
 const baseUrl: string = "https://nbaserver-q21u.onrender.com/api/filter"
 
 class Player{
-
-// position: string;
-// twoPercent: Number;
-// threePercent: Number;
-// points: Number;
-
 
     playerName?: string;
     position: string;
@@ -49,11 +43,72 @@ class Player{
 }
 
 function AddToTable(Arrplayers: Player[]): void{
-    
+    table.innerHTML = `<tr id="title-of-table">
+        <th>Player</th>
+        <th>Points</th>
+        <th>Position</th>
+        <th>FG%</th>
+        <th>3P%</th>
+        <th>Action</th>
+    </tr>`;
+    Arrplayers.forEach((ply)=>{
+        
+
+
+        let row = document.createElement("tr")
+
+            let playerName = document.createElement("td");
+            playerName.textContent = ply.playerName!;
+            row.appendChild(playerName);
+
+            let points = document.createElement("td");
+            points.textContent = ply.points.toString();
+            row.appendChild(points);
+
+            let position = document.createElement("td");
+            position.textContent = ply.position;
+            row.appendChild(position);
+
+            let threePercent = document.createElement("td");
+            threePercent.textContent = ply.threePercent.toString();
+            row.appendChild(threePercent);
+
+            let twoPercent = document.createElement("td");
+            twoPercent.textContent = ply.twoPercent.toString();
+            row.appendChild(twoPercent);
+
+            let button = document.createElement("button");
+            button.textContent = `Add ${ply.playerName!.split(" ")[0]} to group`;
+            button.addEventListener("click", ()=>{addToGroup(ply)})
+            row.appendChild(button);
+        
+            table.appendChild(row)
+    })
 }
 
 
+function addToGroup(plye: Player):void{
+    let myDiv = document.getElementById(`div-${plye.position}`) as HTMLDivElement;
+    myDiv.innerHTML = "";
+    let textDiv = document.createElement("p");
+    let textDiv1 = document.createElement("p");
+    let textDiv2 = document.createElement("p");
+    let textDiv3 = document.createElement("p");
 
+    textDiv.textContent = plye.playerName!;
+    myDiv.appendChild(textDiv);
+
+    textDiv1.textContent = `Three present: ${plye.threePercent}`!;
+    myDiv.appendChild(textDiv1);
+
+    textDiv2.textContent = `two present: ${plye.twoPercent}`!;
+    myDiv.appendChild(textDiv2);
+
+    textDiv3.textContent = `poimts: ${plye.points}`!;
+    
+    myDiv.appendChild(textDiv3);
+    
+}
 
 
 

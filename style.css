@@ -1,4 +1,16 @@
+header{
+    background-color: rgb(82, 82, 253);
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    color: aliceblue;
+}
+h2{
+    color: blue;
+}
 body{
+    margin: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,7 +31,8 @@ body{
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-
+    padding: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 #div-search-player{
@@ -43,4 +56,27 @@ form{
 button{
     color: white;
     background-color: blue;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 7px;
+}
+
+table, td, tr{
+    
+    background-color: aliceblue;
+    border: 1px solid rgb(218, 216, 216);
+    border-collapse: collapse;
+
+}
+#title-of-table{
+    font-size: larger;
+    background-color: red;
+    color: rgb(255, 255, 255);
+}
+
+h4{
+    color: blue;
+}
+th{
+    padding: 10px;
 }

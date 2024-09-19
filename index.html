@@ -7,16 +7,17 @@
     <title>Fantasy Group</title>
 </head>
 <body>
-    <header><h2>My Fantasy Group</h2></header>
+    <header><h3>NBA Fantasy 2014-2024</h3></header>
+    <h2>My Fantasy Group</h2>
     <div id="Div-Group">
-        <div id="point-guard" class="div-player" ><h4>point-guard</h4></div>
-        <div id="shooting-guard" class="div-player" ><h4>shooting-guard</h4></div>
-        <div id="small-forward" class="div-player" ><h4>small-forward</h4></div>
-        <div id="power-forward" class="div-player" ><h4>power-forward</h4></div>
-        <div id="center" class="div-player" ><h4>center</h4></div>
+        <div class="div-player"><h4>point-guard</h4><div id="div-PG" class="div-player" ></div></div>
+        <div class="div-player"><h4>shooting-guard</h4><div id="div-SG" class="div-player" ></div></div>
+        <div class="div-player"><h4>small-forward</h4><div id="div-SF" class="div-player" ></div></div>
+        <div class="div-player"><h4>power-forward</h4><div id="div-PF" class="div-player" ></div></div>
+        <div class="div-player"><h4>center</h4><div id="div-C" class="div-player" ></div></div>
     </div>
     
-    <h3>NBA Player Search</h3>
+    <h2>NBA Player Search</h2>
 
     <!-- דיב חיפוש שחקנים -->
      <div id="div-search-player">
@@ -31,27 +32,20 @@
             </select>
 
             <label for="Points" class="input-search">Points</label>
-            <input type="range" id="Points-input" class="input-search" name="volume" min="0" max="20000" />
+            <input type="range" id="Points-input" class="input-search" name="volume" min="0" max="20000" value="0" />
             
             <label for="FG" class="input-search">FG%</label>
-            <input type="range" id="FG-input" class="input-search" name="FG" min="0" max="100" />
+            <input type="range" id="FG-input" class="input-search" name="FG" min="0" max="100" value="0"/>
 
             <label for="3P" class="input-search">3P%</label>
-            <input type="range" id="3P-input" class="input-search" name="3P" min="0" max="100" />
+            <input type="range" id="3P-input" class="input-search" name="3P" min="0" max="100" value="0"/>
 
             <button id="submit-button" class="input-search" type="submit" >Search Player</button>
 
         </form>
 
-        <table>
-            <tr>
-                <th>Player</th>
-                <th>Position</th>
-                <th>Points</th>
-                <th>FG%</th>
-                <th>3P%</th>
-                <th>Action</th>
-            </tr>
+        <table id="table-of-players">
+            
         </table>
 
 
