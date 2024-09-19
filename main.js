@@ -33,12 +33,7 @@ class Player {
         this.points = point;
     }
 }
-function TestPost() {
-    return __awaiter(this, void 0, void 0, function* () {
-        let myPlay = new Player("PG", 2, 2, 10);
-        let playrss = yield ApiGetPlayers(myPlay);
-        console.log(playrss);
-    });
+function AddToTable(Arrplayers) {
 }
 // post
 function ApiGetPlayers(player) {
